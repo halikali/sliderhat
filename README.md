@@ -74,7 +74,7 @@ Daha sonrasında slider'ı javascprit tarafında initialize etmek için bu veril
 const Slider = require("sliderhat");
 ```
 
-- ## slider initialize edilir 
+- ## Slider initialize edilir 
 Slider new anahtar kelimesi ile çağırılır ve parametre olarak ilgili slider'ın id değeri gönderilir.
 ```
 const mainSlider = new Slider("main-slider")
