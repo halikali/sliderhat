@@ -258,4 +258,4 @@ class Slider {
   }
 }
 
-export default Slider;
+module.exports = Slider;
