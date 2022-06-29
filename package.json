@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "ts": "tsc",
+    "ts": "tsc --watch",
     "parcel": "parcel src/index.html --open",
     "dev": "concurrently --kill-others \"npm run ts\" \"npm run parcel\""
   },
