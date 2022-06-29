@@ -52,9 +52,9 @@ class Slider {
     this.sliderOptions.autoslide &&
       this.startAutoSlide(this.nextSlide.bind(this), this.duration);
     this.sliderOptions.autoslide && this.checkHoverForAutoSlide();
-    if (this.sliderOptions.fitVerticalContent) {
+    if (this.sliderOptions.verticalSlider) {
       this.slider.classList.add("slider--vertical");
-      this.sliderOptions.verticalSlider
+      this.sliderOptions.fitVerticalContent
         ? (this.container.style.paddingLeft =
             this.bulletWrapper.clientWidth + "px")
         : 0;
