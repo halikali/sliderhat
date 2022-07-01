@@ -10,20 +10,21 @@ Projenize kurmak için sliderhat'i bilgisayarınıza indiriniz.
   npm i sliderhat
 ```
 
-Projeyi bilgisayarınıza indirmek istemediğiniz durumlarda CDN aracılığıyla kullanabilirsiniz.
+**Projeyi bilgisayarınıza indirmek istemediğiniz durumlarda CDN aracılığıyla kullanabilirsiniz.**
 
-Stil dosyasını çağırmak için html'de head tag'i içerisine aşağıdaki linki yerleştirerek stil dosyasını projenize dahil edebilirsiniz.
-```
- <link rel="stylesheet" href="https://unpkg.com/sliderhat@1.0.6/slider.css">
-```
-javascprit dosyasını çağırmak için ise kullanacağınız javascprit dosyası içerisine aşağıdaki şekilde import edebilirsiniz.
- ```
- import { Slider } from "https://unpkg.com/sliderhat@1.0.6/core.js";
- ```
+### CDN ile aracılığıyla kullanmak için
+  Stil dosyasını çağırmak için html'de head tag'i içerisine aşağıdaki linki yerleştirerek stil dosyasını projenize dahil edebilirsiniz.
+  ```
+  <link rel="stylesheet" href="https://unpkg.com/sliderhat@1.0.6/slider.css">
+  ```
+  javascprit dosyasını çağırmak için ise kullanacağınız javascprit dosyası içerisine aşağıdaki şekilde import edebilirsiniz.
+  ```
+  import { Slider } from "https://unpkg.com/sliderhat@1.0.6/core.js";
+  ```
 
-## Kullanmaya başlamak için
+# Kullanmaya başlamak için
 
-### Html yapısı
+## Html yapısı
 
 Slider'ın doğru çalışabilmesi için:
 - Ana kapsayıcı olacak dive "slider" class'ı verilmelidir.
