@@ -1,43 +1,66 @@
 # Sliderhat 
 
-Bu proje basit sliderları hızlı bir şekilde oluşturmayo sağlayan bir projedir. Yalnızca deneme amacıyla oluşturulmuştur.
+Bu proje, basit sliderları hızlı bir şekilde oluşturmayı sağlayan bir projedir. Yalnızca deneme amacıyla oluşturulmuştur.
 
 ## Başlarken
 
-Projenize kurmak için sliderhat'i bilgisayarınıza indiriniz.
+Sliderhat'i projenize dahil edebilmeniz için kullanabileceğiniz 2 farklı seçenek bulunmaktadır.
 
-```
-  npm i sliderhat
-```
++ ## NPM aracılığıyla dahil etmek için
+  NPM kullanarak indirebilmek için aşağıdaki komutu kullanabilirsiniz.
 
-**Projeyi bilgisayarınıza indirmek istemediğiniz durumlarda CDN aracılığıyla kullanabilirsiniz.**
-
-### CDN ile aracılığıyla kullanmak için
-  Stil dosyasını çağırmak için html'de head tag'i içerisine aşağıdaki linki yerleştirerek stil dosyasını projenize dahil edebilirsiniz.
   ```
+    npm i sliderhat
+  ```
+
+  Sliderhat'i projenize stil dosyasıyla beraber import ederek öntanımlı özellikleri kullanmaya başlayabilir ve stilleri üzerinde özelleştirme yapabilirsiniz.
+
+
+  ```javascript
+  // Sliderhat javascript dosyasını import etmek için
+  const { Slider } = require("sliderhat/core");
+
+  // Sliderhat stil dosyasını import etmek için
+  import "sliderhat/css";
+  ```
+
+  ### Node_modules altından erişmek isterseniz
+  Stil dosyasını çağırmak için HTML'de head tag'i içerisine aşağıdaki linki yerleştirerek stil dosyasını projenize dahil edebilirsiniz.
+  ```html
+  <link rel="stylesheet" href="./node_modules/sliderhat/slider.css">
+  ```
+  Javascript'i çağırmak için ise kullanacağınız Javascript dosyası içerisine aşağıdaki şekilde import edebilirsiniz.
+  ```javascript
+  import { Slider } from "./node_modules/sliderhat/core.js";
+  ```
+
+
++ ## CDN aracılığıyla aracılığıyla dahil etmek için
+  Stil dosyasını çağırmak için HTML'de head tag'i içerisine aşağıdaki linki yerleştirerek stil dosyasını projenize dahil edebilirsiniz.
+  ```javascript
   <link rel="stylesheet" href="https://unpkg.com/sliderhat@1.0.6/slider.css">
   ```
-  javascprit dosyasını çağırmak için ise kullanacağınız javascprit dosyası içerisine aşağıdaki şekilde import edebilirsiniz.
-  ```
+  Javascript dosyasını çağırmak için ise kullanacağınız Javascript dosyası içerisine Sliderhat'i aşağıda belirtilen şekilde import edebilirsiniz.
+  ```javascript
   import { Slider } from "https://unpkg.com/sliderhat@1.0.6/core.js";
   ```
 
 # Kullanmaya başlamak için
 
-## Html yapısı
+## HTML yapısı
 
 Slider'ın doğru çalışabilmesi için:
-- Ana kapsayıcı olacak dive "slider" class'ı verilmelidir.
+- Ana kapsayıcı olacak div'e "slider" class'ı verilmelidir.
 - Sliderda yer alacak itemler bir div ile sarmalanmalı ve kapsayıcı olan div "slider__container" class'ını içermelidir.
-- Slider itemlarının herbiri birer div içerisinde olmalı ve kapsayıcı div'leri "slider__item" class'ına sahip olmalıdır.
-- Slider yönlendirme okları bir kapsayıcı içerisinde olmalı ve kapsayıcı div'in class'ı "slider__arrows" olmalıdır.
-- Yönlendirme okları birer span içerisinde yer almalı ve span elementleri hem ileri hem de geri yönlendirme oku için "slider__arrow" olmalıdır. İleri yönlendirme oku için 2. eklenecek olan class "slider__arrow--right" ve geri yönlendirme butonu için ise 2. eklenecek olan class "slider__arrow--left" olmalıdır.
-- Bullet eklemek için içerisi boş olacak şekilde bir div açılmalı ve "slider__bullets" class'ı eklenmelidir.
+- Slider itemlarının herbiri birer div içerisinde olmalı ve kapsayıcı div'leri "slider__item" class'ını içermelidir.
+- Slider yönlendirme okları bir kapsayıcı içerisinde olmalı ve kapsayıcı div "slider__arrows" class'ını içermelidir.
+- Yönlendirme okları birer span içerisinde yer almalı ve span elementleri hem ileri hem de geri yönlendirme oku için "slider__arrow" class'ına sahip olmalıdır. İleri yönlendirme oku için 2. eklenecek olan class "slider__arrow--right" ve geri yönlendirme butonu için ise 2. eklenecek olan class "slider__arrow--left" olmalıdır.
+- Bullet eklemek için içerisi boş olacak şekilde bir div açılmalı ve "slider__bullets" class'ını içermelidir.
 
 
 ## Örnek yapı
-Aşağıda yer alan yapı örnek teşkil etmesi adına eklenmmiştir. 
-```
+Aşağıda yer alan yapı örnek teşkil etmesi adına eklenmiştir. 
+```html
 <div class="slider">
   <div class="slider__container">
     <div class="slider__item">slide 1</div>
@@ -78,57 +101,22 @@ Aşağıda yer alan yapı örnek teşkil etmesi adına eklenmmiştir.
 ```
 
 ## Slider'ı başlatmak için
-Sliderhat slider'ları yakalamak için id'leri kullanır. kapsayıcı olan  ve "slider" class'ını eklenen div'e bir id değeri verilmelidir.
-Daha sonrasında slider'ı javascprit tarafında initialize etmek için bu verilen id değeri kullanılacaktır.
-
-1. ## sliderhat proje dosyasına çağırılır
-    Sliderhat'ı proje dosyanıza çağırabilmeniz için kullanabileceğiniz 3 yol vardır.
-  
-  + ### Node_modules klasörü altından çağırmak
-    Stil dosyasını çağırmak için html'de head tag'i içerisine aşağıdaki linki yerleştirerek stil dosyasını projenize dahil edebilirsiniz.
-    ```
-    <link rel="stylesheet" href="./node_modules/sliderhat/slider.css">
-    ```
-    javascprit'i çağırmak için ise kullanacağınız javascprit dosyası içerisine aşağıdaki şekilde import edebilirsiniz.
-    ```
-    import { Slider } from "./node_modules/sliderhat/core.js";
-    ```
-
-  + ### CDN üzerinden çağırmak
-    **Sliderhat'i CDN üzerinden kullanacağınız durumlarda projeyi bilgisayarınıza indirmenize gerek yoktur.**
-
-    Stil dosyasını çağırmak için html'de head tag'i içerisine aşağıdaki linki yerleştirerek stil dosyasını projenize dahil edebilirsiniz.
-    ```
-    <link rel="stylesheet" href="https://unpkg.com/sliderhat@1.0.6/slider.css">
-    ```
-    javascprit'i çağırmak için ise kullanacağınız javascprit dosyası içerisine aşağıdaki şekilde import edebilirsiniz.
-    ```
-    import { Slider } from "https://unpkg.com/sliderhat@1.0.6/core.js";
-    ```
-
-  + ### CSS Loader aracılığıyla çağırmak 
-    Stil dosyasını çağırmak için ana Javascript dosyanıza aşağıdaki kodu ekleyerek CSS'i import edebilirsiniz.
-    ```
-    import "sliderhat/css";
-    ```
-    javascprit'i çağırmak için ise kullanacağınız javascprit dosyası içerisine aşağıdaki şekilde import edebilirsiniz.
-    ```
-    const { Slider } = require("sliderhat/core");
-    ```
+Sliderhat slider'ları yakalamak için id'leri kullanır. Kapsayıcı olan ve "slider" class'ı eklenen div'e bir id değeri verilmelidir.
+Daha sonrasında slider'ı Javascript tarafında initialize etmek için bu verilen id değeri kullanılacaktır. Yukarıda belirtilmiş olan yollardan birisini tercih ettikten sonra Sliderhat'i aşağıda belirtilen şekilde kullanmaya başlayabilirsiniz.
 
 
+- ## Slider initialize edilir 
+  Slider new anahtar kelimesi ile çağırılır ve parametre olarak ilgili slider'ın id değeri gönderilir.
+  ```javascript
+  const mainSlider = new Slider(...)
+  ```
 
+- ## Slider çalıştırılır
+  ```javascript
+  mainSlider.slide();
+  ```
 
-2. ## Slider initialize edilir 
-Slider new anahtar kelimesi ile çağırılır ve parametre olarak ilgili slider'ın id değeri gönderilir.
-```
-const mainSlider = new Slider("main-slider")
-```
-
-3. ## Slider çalıştırılır
-```
-mainSlider.slide();
-```
+Sliderhat ile oluşturduğunuz slider'ları özelleştirmek için kullanabileceğiniz parametreler bulunmaktadır. Parametrelerin özellikleri ve kullanım şekli aşağıda belirtilmiştir.
 
 # Slider için eklenebilecek parametreler ve kullanım örneği
 
@@ -136,7 +124,7 @@ mainSlider.slide();
 |---|---|---|---|
 |changeSlideOnBulletHover|boolean|false|Mouse aracılığıyla bullet'ın üzerine gelindiğinde sliderı ilgili kaydırır|
 |showBulletIndex|boolean|false|Bullet'ların içerisinde index numarasını yazar|   
-|bulletImages|string[]|-|Bulletlar'a istenilen resimleri eklemeyi sağlar. Bir array içerisinde gönderilen url adresleri sırasıyla ilgili bulletlara yerleşir.|   
+|bulletImages|string[ ]|-|Bulletlar'a istenilen resimleri eklemeyi sağlar. Bir array içerisinde gönderilen url adresleri sırasıyla ilgili bulletlara yerleşir.|   
 |bulletDefaultImage|boolean|false|Slider'da yer alan resimlerin, kendi index değeri ile eşleşen bulletlarda da görünmesini sağlar.|   
 |infiniteSlide|boolean|false|Slider'ın son slide'a ulaştığında tekrar ilk slide'a geçerek durmadan devam etmesini sağlar|   
 |clickableBullet|boolean|false|Bullet'lara tıklandığında slider'ı ilgili slide'a kaydırır.|   
@@ -147,19 +135,21 @@ mainSlider.slide();
 
 
 ## Parametreleri kullanmak
-Parametreleri kullanmak için slider fonksiyonuna ikinci bir parametre olarak obje şeklinde gönderilir.
+Parametreleri kullanmak için slider fonksiyonuna ikinci parametre olarak bir obje gönderilir.
 
 #### Örnek olarak
-```
+```javascript
 const mainSlider = new Slider("main-slider", {
   clickableBullet: true,
   autoslide: true,
   autoSlideTimer: 4000,
   infiniteSlide: true,
 });
+
+mainSlider.slide();
 ```
 veya 
-```
+```javascript
 let sliderObj = {
   clickableBullet: true,
   autoslide: true,
@@ -168,4 +158,6 @@ let sliderObj = {
 }
 
 const mainSlider = new Slider("main-slider",sliderObj);
+
+mainSlider.slide();
 ```
