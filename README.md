@@ -38,11 +38,11 @@ Sliderhat'i projenize dahil edebilmeniz için kullanabileceğiniz 2 farklı seç
 + ## CDN aracılığıyla aracılığıyla dahil etmek için
   Stil dosyasını çağırmak için HTML'de head tag'i içerisine aşağıdaki linki yerleştirerek stil dosyasını projenize dahil edebilirsiniz.
   ```javascript
-  <link rel="stylesheet" href="https://unpkg.com/sliderhat@1.0.6/slider.css">
+  <link rel="stylesheet" href="https://unpkg.com/sliderhat@1.0.7/slider.css">
   ```
   Javascript dosyasını çağırmak için ise kullanacağınız Javascript dosyası içerisine Sliderhat'i aşağıda belirtilen şekilde import edebilirsiniz.
   ```javascript
-  import { Slider } from "https://unpkg.com/sliderhat@1.0.6/core.js";
+  import { Slider } from "https://unpkg.com/sliderhat@1.0.7/core.js";
   ```
 
 # Kullanmaya başlamak için
