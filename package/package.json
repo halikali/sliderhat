@@ -1,17 +1,27 @@
 {
   "name": "sliderhat",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "main": "core.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "halikali",
+  "author": "Halık Ali Tunç",
   "license": "ISC",
   "exports": {
     ".": "./core.js",
     "./core": "./core.js",
     "./css": "./slider.css",
     "./package.json": "./package.json"
+  },
+  "keywords": [
+    "slider",
+    "sliderhat",
+    "carousel",
+    "slideshow"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/halikali/sliderhat"
   }
 }
