@@ -114,24 +114,3 @@
     }
   }
 }
-
-#third-slider {
-  &.slider {
-    width: 450px;
-    padding-bottom: 100px;
-  }
-
-  .slider__bullets {
-    height: 100px;
-    .slider__bullet {
-      text-align: center;
-      width: 70px;
-      height: 70px;
-      border-radius: 0;
-      border: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-}
