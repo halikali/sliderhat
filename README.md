@@ -10,6 +10,17 @@ Projenize kurmak için sliderhat'i bilgisayarınıza indiriniz.
   npm i sliderhat
 ```
 
+Projeyi bilgisayarınıza indirmek istemediğiniz durumlarda CDN aracılığıyla kullanabilirsiniz.
+
+Stil dosyasını çağırmak için html'de head tag'i içerisine aşağıdaki linki yerleştirerek stil dosyasını projenize dahil edebilirsiniz.
+```
+ <link rel="stylesheet" href="https://unpkg.com/sliderhat@1.0.6/slider.css">
+```
+javascprit dosyasını çağırmak için ise kullanacağınız javascprit dosyası içerisine aşağıdaki şekilde import edebilirsiniz.
+ ```
+ import { Slider } from "https://unpkg.com/sliderhat@1.0.6/core.js";
+ ```
+
 ## Kullanmaya başlamak için
 
 ### Html yapısı
@@ -69,18 +80,51 @@ Aşağıda yer alan yapı örnek teşkil etmesi adına eklenmmiştir.
 Sliderhat slider'ları yakalamak için id'leri kullanır. kapsayıcı olan  ve "slider" class'ını eklenen div'e bir id değeri verilmelidir.
 Daha sonrasında slider'ı javascprit tarafında initialize etmek için bu verilen id değeri kullanılacaktır.
 
-- ## sliderhat proje dosyasına çağırılır
-```
-const Slider = require("sliderhat");
-```
+1. ## sliderhat proje dosyasına çağırılır
+    Sliderhat'ı proje dosyanıza çağırabilmeniz için kullanabileceğiniz 3 yol vardır.
+  
+  + ### Node_modules klasörü altından çağırmak
+    Stil dosyasını çağırmak için html'de head tag'i içerisine aşağıdaki linki yerleştirerek stil dosyasını projenize dahil edebilirsiniz.
+    ```
+    <link rel="stylesheet" href="./node_modules/sliderhat/slider.css">
+    ```
+    javascprit'i çağırmak için ise kullanacağınız javascprit dosyası içerisine aşağıdaki şekilde import edebilirsiniz.
+    ```
+    import { Slider } from "./node_modules/sliderhat/core.js";
+    ```
 
-- ## Slider initialize edilir 
+  + ### CDN üzerinden çağırmak
+    **Sliderhat'i CDN üzerinden kullanacağınız durumlarda projeyi bilgisayarınıza indirmenize gerek yoktur.**
+
+    Stil dosyasını çağırmak için html'de head tag'i içerisine aşağıdaki linki yerleştirerek stil dosyasını projenize dahil edebilirsiniz.
+    ```
+    <link rel="stylesheet" href="https://unpkg.com/sliderhat@1.0.6/slider.css">
+    ```
+    javascprit'i çağırmak için ise kullanacağınız javascprit dosyası içerisine aşağıdaki şekilde import edebilirsiniz.
+    ```
+    import { Slider } from "https://unpkg.com/sliderhat@1.0.6/core.js";
+    ```
+
+  + ### CSS Loader aracılığıyla çağırmak 
+    Stil dosyasını çağırmak için ana Javascript dosyanıza aşağıdaki kodu ekleyerek CSS'i import edebilirsiniz.
+    ```
+    import "sliderhat/css";
+    ```
+    javascprit'i çağırmak için ise kullanacağınız javascprit dosyası içerisine aşağıdaki şekilde import edebilirsiniz.
+    ```
+    const { Slider } = require("sliderhat/core");
+    ```
+
+
+
+
+2. ## Slider initialize edilir 
 Slider new anahtar kelimesi ile çağırılır ve parametre olarak ilgili slider'ın id değeri gönderilir.
 ```
 const mainSlider = new Slider("main-slider")
 ```
 
-- ## Slider çalıştırılır
+3. ## Slider çalıştırılır
 ```
 mainSlider.slide();
 ```
