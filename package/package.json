@@ -1,0 +1,17 @@
+{
+  "name": "sliderhat",
+  "version": "1.0.5",
+  "description": "",
+  "main": "core.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "halikali",
+  "license": "ISC",
+  "exports": {
+    ".": "./core.js",
+    "./core": "./core.js",
+    "./css": "./slider.css",
+    "./package.json": "./package.json"
+  }
+}
