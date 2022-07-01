@@ -6,7 +6,7 @@
   "scripts": {
     "ts": "tsc --watch",
     "parcel": "parcel src/index.html --open",
-    "dev": "concurrently --kill-others \"npm run ts\" \"npm run parcel\""
+    "build": "parcel build ./src/index.html --no-source-maps --dist-dir ./core"
   },
   "author": "halikali",
   "license": "ISC",
