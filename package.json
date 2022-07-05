@@ -4,8 +4,9 @@
   "description": "",
   "scripts": {
     "ts": "tsc --watch",
+    "ts:build": "tsc ./src/js/core.ts",
     "parcel": "parcel src/index.html --open",
-    "build": "parcel build ./src/index.html --dist-dir ./package --no-content-hash --no-source-maps"
+    "build": "parcel build --no-content-hash --no-source-maps ./src/js/core.ts --no-content-hash --no-source-maps ./src/css/main.scss --dist-dir ./package "
   },
   "author": "halikali",
   "license": "ISC",
@@ -18,15 +19,5 @@
     "postcss": "^8.4.14",
     "typescript": "^4.7.4"
   },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {
-        "overrideBrowserslist": [
-          "> 1%",
-          "last 4 versions",
-          "ie >= 9"
-        ]
-      }
-    }
-  }
+  "browserslist": "> 0.5%, last 2 versions, not dead"
 }
