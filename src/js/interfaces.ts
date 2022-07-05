@@ -4,7 +4,7 @@ export interface ISliderOptions {
   bulletDefaultImage?: boolean;
   infiniteSlide?: boolean;
   clickableBullet?: boolean;
-  autoslide?: boolean;
+  autoSlide?: boolean;
   autoSlideTimer?: number;
   verticalSlider?: boolean;
   fitVerticalContent?: boolean;
