@@ -54,7 +54,7 @@ Slider'ın doğru çalışabilmesi için:
 - Sliderda yer alacak itemler bir div ile sarmalanmalı ve kapsayıcı olan div "slider__container" class'ını içermelidir.
 - Slider itemlarının herbiri birer div içerisinde olmalı ve kapsayıcı div'leri "slider__item" class'ını içermelidir.
 - Slider yönlendirme okları bir kapsayıcı içerisinde olmalı ve kapsayıcı div "slider__arrows" class'ını içermelidir.
-- Yönlendirme okları birer span içerisinde yer almalı ve span elementleri hem ileri hem de geri yönlendirme oku için "slider__arrow" class'ına sahip olmalıdır. İleri yönlendirme oku için 2. eklenecek olan class "slider__arrow--right" ve geri yönlendirme butonu için ise 2. eklenecek olan class "slider__arrow--left" olmalıdır.
+- Yönlendirme okları birer span içerisinde yer almalı ve span elementleri hem ileri hem de geri yönlendirme oku için "slider__arrow" class'ına sahip olmalıdır. İleri yönlendirme oku için 2. eklenecek olan class "slider__arrow--next" ve geri yönlendirme butonu için ise 2. eklenecek olan class "slider__arrow--prev" olmalıdır.
 - Bullet eklemek için içerisi boş olacak şekilde bir div açılmalı ve "slider__bullets" class'ını içermelidir.
 
 
@@ -74,7 +74,7 @@ Aşağıda yer alan yapı örnek teşkil etmesi adına eklenmiştir.
 
   <div class="slider__bullets"></div>
   <div class="slider__arrows">
-    <span class="slider__arrow slider__arrow--left">
+    <span class="slider__arrow slider__arrow--prev">
         <svg
         xmlns="http://www.w3.org/2000/svg"
         width="44"
@@ -85,7 +85,7 @@ Aşağıda yer alan yapı örnek teşkil etmesi adına eklenmiştir.
           <path d="M0 0h24v24H0z" fill="none" />
        </svg>
     </span>
-    <span class="slider__arrow slider__arrow--right">
+    <span class="slider__arrow slider__arrow--next">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="44"
@@ -141,7 +141,7 @@ Parametreleri kullanmak için slider fonksiyonuna ikinci parametre olarak bir ob
 ```javascript
 const mainSlider = new Slider("main-slider", {
   clickableBullet: true,
-  autoslide: true,
+  autoSlide: true,
   autoSlideTimer: 4000,
   infiniteSlide: true,
 });
@@ -152,7 +152,7 @@ veya
 ```javascript
 let sliderObj = {
   clickableBullet: true,
-  autoslide: true,
+  autoSlide: true,
   autoSlideTimer: 4000,
   infiniteSlide: true,
 }
